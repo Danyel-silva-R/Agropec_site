@@ -1,94 +1,445 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGROPEC 2025</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGROPEC 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #004b23;
+  border-bottom: 4px solid #b0d132;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-bar .logo {
+  height: 32px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: block;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #004b23;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+}
+
+.nav-links a {
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-top: 1px solid #b0d132;
+}
+
+.nav-links a:hover {
+  background-color: #006837;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+@media(min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+  }
+  .nav-links a {
+    border: none;
+    padding: 0 1rem;
+  }
+}
+    {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #3f693a, #9cd047);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title {
+      background: linear-gradient(90deg, #3f693a, #9cd047);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+   
+    .imagem-responsiva {
+       width: 100%;
+       max-width: 400px;
+       height: auto;
+       display: block;
+       margin: 0 auto; /* centraliza */
+}
+    .carousel {
+      background-color: #144634;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .carousel img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    .intro {
+      background: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #3b703c;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p {
+      font-size: 0.95rem;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+    }
+
+    .intro button {
+      background-color: #004d26;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 0.5rem 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .programacao-section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .evento {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .evento h3 {
+      color: #146837;
+      margin-bottom: 0.5rem;
+    }
+
+    .evento p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .evento small {
+      color: #444;
+      display: block;
+    }
+
+    .evento .info {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #007e55;
+      font-weight: 600;
+    }
+
+    .evento .info span {
+      margin-left: 0.3rem;
+    }
+
+    .botao-completo {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .botao-completo button {
+      background-color: #86b63f;
+      color: white;
+      border: none;
+      padding: 0.7rem 2rem;
+      font-size: 1rem;
+      border-radius: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .mapa-container,
+    .expositores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .mapa-box,
+    .expositor-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mapa-box img,
+    .expositor-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .mapa-box p,
+    .expositor-card p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .mapa-box button,
+    .local button {
+      background-color: #c0e8d5;
+      color: #145c37;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .expositor-card h4 {
+      color: #145c37;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .local {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: #007e55;
+      font-weight: 600;
+    }
+    footer {
+  background: #003920;
+  color: white;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+
+footer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Bem-vindo à AGROPEC2025</h1>
-        <p>A maior feira de agronegócio do Norte. <br> Conheça nosso aplicativo oficial, confira a programação completa e planeje sua visita de forma inteligente</p>
-        <a href="#" class="btn">Baixar o App</a>
-    </header>
-    <!--nav bar-->
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#programacao">Programação</a>
-        <a href="#mapa">Mapa</a>
-        <a href="#expositores">Expositores</a>
-    </nav>
-    <!--seções do site-->
-    <section id="programação" class="section1">
-        <h2>Programação Oficial</h2>
-        <!--a programação ainda tá aqueles eventos aleatórios que a gente usou de placeholder pq ainda não liberaram a programação completa-->
-        <div class="cards">
-            <div class="card">
-                <h3>20h - Abertura do Evento</h3>
-                <p>Discurso das autoridades e apresentação cultural</p>
-            </div>
-            <div class="card"> 
-                <h3>23h - Marília Tavares</h3>
-                <p>Marília Tavares vai tremer o chão com sua performance</p>
-            </div>
-            <div class="card">
-                <h3>23h - Felipe Amorim</h3>
-                <p>Felipe Amorim traz seus maiores sucessos</p>
-            </div>
-            <div class="card">
-                <h3>11h - Palestras</h3>
-                <p>Por que investir no AGRO? Com Flávio Florenzano</p>
-            </div>
-            <div class="card">
-                <h3>21h - Concurso Miss e Mister AGROPEC</h3>
-                <p>Autenticidade dos jovens que vivem e respiram o agro.</p>
-            </div>
-            <div class="card">
-                <h3>21h - Abertura do Rodeio</h3>
-                <p>Rodeio Dallas traz o maior rodeio do Norte.</p>
-            </div>
-        </div>
-    </section>
-    <!--seção do mapa-->
-    <section id="mapa" class="section2">
-        <h2>Mapa AGROPEC</h2>
-        <div class="cards">
-            <div class="card">
-                <p>Acesse o mapa direto pelo site e explore a feira com facilidade</p>
-                <a href="#" class="btn">Acesse o Mapa</a>
-            </div>
-            <div class="card">
-                <p>No aplicativo, você tem todo o mapa ao seu alcance, basta fazer o download no seu dispositivo.</p>
-                <a href="#" class="btn">Baixar o App</a>
-            </div>
-        </div>
-    </section>
-    <!--seção dos expositores-->
-    <section id="expositores" class="section3">
-        <h2>Expositores</h2>
-        <p>A AGROPEC 2025 conta com diversas barracas e exposições, apresentando uma ampla variedade de temas. Explore cada estande e conheça o trabalho dos nossos parceiros</p>
-        <div class="cards">
-            <div class="card">
-                <h3>Compostagem Sustentável</h3>
-                <p>Exposição prática sobre a produção de adubo a partir de resíduos orgânicos, desenvolvida pelos alunos de Meio Ambiente</p>
-                <small><strong>Estande A1</strong></small>
-            </div>
-            <div class="card">
-                <h3>Tecnologia com Drones</h3>
-                <p>Demonstrações ao vivo de drones agrícolas realizados por grupos de pesquisa</p>
-                <small><strong>Estande A2</strong></small>
-            </div>
-            <div class="card">
-                <h3>Feira de Produtos Naturais</h3>
-                <p>Venda e exposição de alimento agroecológicos com degustações e explicações nutricionais</p>
-                <small><strong>Estande B3</strong></small>
-            </div>
-            <div class="card">
-                <h3>Sabores da Terra</h3>
-                <p>Produtos regionais como geleias, pimentas e cafés especiais montados pela comunidade local.</p>
-                <small><strong>Estande A4</strong></small>
-            </div>
-        </div>
-    </section>
+    <div class="top-bar">
+  <img src="src/img/logo agropec 1.png" alt="Logo AGROPEC" class="logo">
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="nav-links" id="menu">
+    <a href="#programacao">Programação</a>
+    <a href="#mapa">Mapa</a>
+    <a href="#app">App</a>
+    <a href="#expositores">Expositores</a>
+    <a href="#patrocinadores">Patrocinadores</a>
+  </nav>
+</div>
+  <header>
+    <h1 style="color: white; font-weight: 800; font-size: 1.5rem;">AGROPEC 2025</h1>
+  </header>
+
+  <section class="carousel">
+    <img src="src/img/slide1.jpg" alt="Agropec 2025 - Feira de Agronegócio" class="imagem-responsiva" 
+
+  <section> <class="intro">
+    <h2>Bem-vindo à AGROPEC2025</h2>
+    <p>A maior feira de agronegócio do Norte. Conheça nosso aplicativo oficial, confira a programação completa e planeje sua visita de forma inteligente.</p>
+    <button>Baixar o App</button>
+  </section>
+
+  <div class="section-title">Programação Oficial</div>
+  <section class="programacao-section">
+    <div class="evento">
+      <h3>20h – Abertura do Evento</h3>
+      <p>Discurso dos organizadores e apresentação cultural.</p>
+      <div class="info">📅 <span>09/08</span> &nbsp;&nbsp; 📍 <span>local hipotético</span></div>
+    </div>
+    <div class="evento">
+      <h3>23h – Marília Tavares</h3>
+      <p>Marília Tavares vai tremer o chão com sua performance.</p>
+      <div class="info">📅 <span>10/08</span> &nbsp;&nbsp; 📍 <span>local hipotético</span></div>
+    </div>
+    <div class="evento">
+      <h3>23h – Felipe Amorim</h3>
+      <p>Felipe Amorim traz seus maiores sucessos.</p>
+      <div class="info">📅 <span>09/08</span> &nbsp;&nbsp; 📍 <span>local hipotético</span></div>
+    </div>
+    <div class="evento">
+      <h3>21h – Concurso Miss e Mister Agropec</h3>
+      <p>Autenticidade dos jovens que vivem e respiram o agro.</p>
+      <div class="info">📅 <span>10/08</span> &nbsp;&nbsp; 📍 <span>local hipotético</span></div>
+    </div>
+    <div class="evento">
+      <h3>19h – Palestras</h3>
+      <p>Por que a cria NÃO dá lucro?! com Fúlvio Florenzano.</p>
+      <div class="info">📅 <span>11/08</span> &nbsp;&nbsp; 📍 <span>local hipotético</span></div>
+    </div>
+    <div class="evento">
+      <h3>21h – Abertura do Rodeio</h3>
+      <p>Cia de Rodeio Dallas traz o maior rodeio do Norte.</p>
+      <div class="info">📅 <span>12/08</span> &nbsp;&nbsp; 📍 <span>local hipotético</span></div>
+    </div>
+  </section>
+
+  <div class="botao-completo">
+    <button>Programação Completa</button>
+  </div>
+
+  <div class="section-title">Mapa Agropec</div>
+  <section class="mapa-container">
+    <div class="mapa-box">
+      <img src="src/img/mapa 2.png" alt="Mapa pelo site" style="width: 100%; max-width: 400px; height: auto;">
+      <p>Acesse o mapa direto pelo site e explore a feira com facilidade</p>
+      <button>Acesse o mapa</button>
+    </div>
+    <div class="mapa-box">
+      <img src="src/img/mapa.png" alt="Mapa pelo app" style="width: 100%; max-width: 400px; height: auto;">
+      <p>No aplicativo, você tem todo o mapa ao seu alcance, basta fazer o download do aplicativo.</p>
+      <button>Baixar o App</button>
+    </div>
+  </section>
+
+  <div class="section-title">Expositores</div>
+  <section class="expositores-grid">
+    <div class="expositor-card">
+      <img src="src/img/exemploestande1.jpg" alt="Imagem Compostagem Sustentável">
+      <h4>Compostagem Sustentável</h4>
+      <p>Exposição prática sobre produção de adubo a partir de resíduos orgânicos, desenvolvida pelos alunos de Meio Ambiente.</p>
+      <div class="local">
+        <span>📍 Estande A1</span>
+        <button>Ver no mapa</button>
+      </div>
+    </div>
+    <div class="expositor-card">
+      <img src="src/img/exemploextande2.jpg" alt="Imagem Tecnologia com Drones">
+      <h4>Tecnologia com Drones</h4>
+      <p>Demonstrações ao vivo de drones agrícolas realizadas pelo grupo de pesquisa em automação do IFPA.</p>
+      <div class="local">
+        <span>📍 Estande A2</span>
+        <button>Ver no mapa</button>
+      </div>
+    </div>
+    <div class="expositor-card">
+      <img src="src/img/exemploextande3.jpg" alt="Imagem Feira de Produtos Naturais">
+      <h4>Feira de Produtos Naturais</h4>
+      <p>Venda e exposição de alimentos agroecológicos produzidos pelos alunos da Agroindústria, com degustações e explicações nutricionais.</p>
+      <div class="local">
+        <span>📍 Estande B3</span>
+        <button>Ver no mapa</button>
+      </div>
+    </div>
+    <div class="expositor-card">
+      <img src="src/img/exemploextande4.jpg" alt="Imagem Sabores da Terra">
+      <h4>Sabores da Terra</h4>
+      <p>Uma tenda gastronômica com produtos regionais como geleias, pimentas e cafés especiais. Montada com apoio da comunidade local.</p>
+      <div class="local">
+        <span>📍 Estande A4</span>
+        <button>Ver no mapa</button>
+      </div>
+    </div>
+  </section>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show');
+  }
+
+  function closeMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.remove('show');
+  }
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+</script>
 </body>
+<footer>
+  <div>
+    <h4>AGROPEC 2025</h4>
+    <p>Feira de Agricultura e Pecuária</p>
+  </div>
+
+  <div>
+    <h4>Contato</h4>
+    <p>contato@agropec.com.br</p>
+    <p>(11) 98765-4321</p>
+    <p>Rua Exemplo, 123 São Paulo, SP</p>
+  </div>
+</footer>
 </html>
