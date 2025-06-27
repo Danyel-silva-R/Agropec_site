@@ -48,9 +48,9 @@
   top: 100%;
   right: 0;
   width: 100%;
-  background-color: #3f693a; /* cor de fundo sempre visível no mobile */
+  background-color: transparent; /* cor de fundo sempre visível no mobile */
   z-index: 1001;
-  border-top: 1px solid #b0d132;
+  border-top: 1px solid transparent;
 }
 
 @media (max-width: 767px) {
