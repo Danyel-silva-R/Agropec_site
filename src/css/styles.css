@@ -1,0 +1,467 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(90deg, #3f693a, #9cd047); /*ainda pensando sobre esse ou esse 'background-color: #004b23;'
+*/
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-bar .logo {
+      height: 50px;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: block;
+    }
+
+    .nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  background-color: transparent; /* fundo transparente no desktop */
+  z-index: 1001;
+}
+
+@media (max-width: 767px) {
+  .nav-links {
+    background-color: #3f693a; /* verde só no celular */
+  }
+}
+
+
+
+    .nav-links a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-top: 1px solid #b0d132;
+    }
+
+    .nav-links a:hover {
+      background-color: #006837;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+    @media(min-width: 768px) {
+     .nav-links a:hover {
+      background-color: transparent; /* tira o fundo verde no hover só no desktop */
+    }
+}
+
+    @media(min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+      }
+      .nav-links a {
+        border: none;
+        padding: 0 1rem;
+      }
+    }
+
+    header {
+      background: linear-gradient(90deg, #3f693a, #9cd047);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title {
+      background: linear-gradient(90deg, #3f693a, #9cd047);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+
+    .imagem-responsiva {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .carousel {
+      background-color: #144634;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .carousel img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+ .intro {
+  position: relative;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #333;
+  min-height: 400px; /* altura mínima pra imagem aparecer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://images.pexels.com/photos/14201184/pexels-photo-14201184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover; /* cobre toda a área */
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.40; /* deixa beeem fraquinha */
+  z-index: 0;
+}
+
+.intro > * {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+    .intro h2 {
+      color: #3b703c;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p {
+      font-size: 0.95rem;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+    }
+
+    .intro button,
+    .botao-completo button,
+    .mapa-box button,
+    .local button {
+      background-color: #004d26;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 0.6rem 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: auto;
+      padding: 0.6rem 1.5rem;
+}
+
+  
+
+    .intro button:hover,
+    .botao-completo button:hover,
+    .mapa-box button:hover,
+    .local button:hover {
+      background-color: #007e55;
+    }
+
+    .programacao-section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .evento {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .evento h3 {
+      color: #146837;
+      margin-bottom: 0.5rem;
+    }
+
+    .evento p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .evento .info {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #007e55;
+      font-weight: 600;
+    }
+
+    .evento .info span {
+      margin-left: 0.3rem;
+    }
+
+    .botao-completo {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .mapa-container,
+    .expositores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .mapa-box,
+    .expositor-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mapa-box img,
+    .expositor-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .expositor-card h4 {
+      color: #145c37;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .local {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: #007e55;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #003920;
+      color: white;
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      text-align: left;
+    }
+
+    footer h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+    .mapa-app-blocos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+}
+
+.mapa-app-blocos .bloco {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.mapa-app-blocos .bloco h3 {
+  color: #145c37;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mapa-app-blocos .bloco p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.mapa-app-blocos .bloco button {
+  background-color: #004d26;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mapa-app-blocos .bloco button:hover {
+  background-color: #007e55;
+}
+.mapa-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+}
+
+.mapa-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.mapa-card img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.mapa-card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.mapa-card button {
+  background-color: #004d26;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mapa-card button:hover {
+  background-color: #007e55;
+}
+
+/* Responsivo: lado a lado no PC */
+@media(min-width: 768px) {
+  .mapa-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.carousel-patrocinadores {
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease;
+  justify-content: flex-start; 
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.patrocinador-item {
+  flex: 0 0 auto; /* Não encolhe, largura fixa */
+  width: 150px; /* largura fixa do logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.patrocinador-item img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(0.2); /* efeito leve, opcional */
+  transition: filter 0.3s;
+}
+
+.patrocinador-item img:hover {
+  filter: grayscale(0);
+}
+
+/* Responsivo - no celular mostrar um só logo por vez, com largura maior */
+@media (max-width: 767px) {
+  .patrocinador-item {
+    width: 80vw; /* quase toda largura do celular */
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+[id] {
+  scroll-margin-top: 80px;
+}
