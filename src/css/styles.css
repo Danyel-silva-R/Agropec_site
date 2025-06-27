@@ -1,4 +1,4 @@
-* {
+    *{
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -16,8 +16,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.75rem 1rem;
-      background: linear-gradient(90deg, #3f693a, #9cd047); /*ainda pensando sobre esse ou esse 'background-color: #004b23;'
-*/
+      background: linear-gradient(90deg, #3f693a, #9cd047); 
+
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -49,7 +49,7 @@
 
 @media (max-width: 767px) {
   .nav-links {
-    background-color: #3f693a; /* verde só no celular */
+    background-color: #3f693a; 
   }
 }
 
@@ -73,7 +73,7 @@
     }
     @media(min-width: 768px) {
      .nav-links a:hover {
-      background-color: transparent; /* tira o fundo verde no hover só no desktop */
+      background-color: transparent; 
     }
 }
 
@@ -138,7 +138,7 @@
   padding: 4rem 1rem;
   text-align: center;
   color: #333;
-  min-height: 400px; /* altura mínima pra imagem aparecer */
+  min-height: 400px; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,10 +152,10 @@
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background-image: url('https://images.pexels.com/photos/14201184/pexels-photo-14201184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-  background-size: cover; /* cobre toda a área */
+  background-size: cover; 
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.40; /* deixa beeem fraquinha */
+  opacity: 0.40; 
   z-index: 0;
 }
 
@@ -432,8 +432,8 @@
 }
 
 .patrocinador-item {
-  flex: 0 0 auto; /* Não encolhe, largura fixa */
-  width: 150px; /* largura fixa do logo */
+  flex: 0 0 auto;
+  width: 150px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -443,7 +443,7 @@
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  filter: grayscale(0.2); /* efeito leve, opcional */
+  filter: grayscale(0.2); 
   transition: filter 0.3s;
 }
 
@@ -451,10 +451,10 @@
   filter: grayscale(0);
 }
 
-/* Responsivo - no celular mostrar um só logo por vez, com largura maior */
+
 @media (max-width: 767px) {
   .patrocinador-item {
-    width: 80vw; /* quase toda largura do celular */
+    width: 80vw; 
   }
 }
 img {
