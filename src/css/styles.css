@@ -48,7 +48,13 @@
   top: 100%;
   right: 0;
   width: 100%;
+<<<<<<< HEAD
   z-index: 1001;
+=======
+  background-color: transparent; /* cor de fundo sempre visível no mobile */
+  z-index: 1001;
+  border-top: 1px solid transparent;
+>>>>>>> 8f3eadde86e691d0efec13832fe67d091b0a87e6
 }
 
 @media (max-width: 767px) {
