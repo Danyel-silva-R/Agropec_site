@@ -66,17 +66,25 @@
 <div class="section-title" id="mapa">Mapa Agropec</div>
 
 <section class="mapa-grid">
-  <div class="mapa-card">
-    <img src="src/img/mapa 2.png" alt="Mapa pelo site" />
+ <!-- Card 1: Mapa pelo site -->
+<div class="mapa-card">
+  <img src="src/img/mapa 2.png" alt="Mapa pelo site" />
+  <div class="mapa-card-conteudo">
     <p>Acesse o mapa direto pelo site e explore a feira com facilidade</p>
-    <button>Acesse o mapa</button>
   </div>
-  <div class="mapa-card">
-    <img src="src/img/mapa.png" alt="Mapa pelo app" />
+  <button>Acesse o mapa</button>
+</div>
+
+<!-- Card 2: Mapa pelo app -->
+<div class="mapa-card">
+  <img src="src/img/mapa.png" alt="Mapa pelo app" />
+  <div class="mapa-card-conteudo">
     <p>No aplicativo, você tem todo o mapa ao seu alcance, basta fazer o download do aplicativo.</p>
-    <button>Baixar o App</button>
   </div>
+  <button>Baixar o App</button>
+</div>
 </section>
+
   <div class="section-title" id="expositores">Expositores</div>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #444;">
   A AGROPEC 2025 conta com diversas barracas e exposições, apresentando uma ampla variedade de temas. Explore cada estande e conheça o trabalho dos nossos parceiros!
@@ -102,7 +110,8 @@
       </div>
     </div>
     <div class="expositor-card">
-      <img src="https://img.freepik.com/fotos-gratis/vista-superior-da-cesta-de-vegetais-com-tesoura_23-2148622478.jpg?uid=R98956121&ga=GA1.1.1886273429.1750912685&semt=ais_hybrid&w=740"
+      <img src="https://img.freepik.com/fotos-gratis/vista-superior-da-cesta-de-vegetais-com-tesoura_23-2148622478.jpg?uid=R98956121&ga=GA1.1.1886273429.1750912685&semt=ais_hybrid&w=740" alt="Imagem Horta Comunitária">
+      <h4>Alimentos Agroecológicos</h4>
       <p>Venda e exposição de alimentos agroecológicos produzidos pelos alunos da Agroindústria, com degustações e explicações nutricionais.</p>
       <div class="local">
         <span>📍 Estande B3</span>
@@ -126,37 +135,67 @@
  <section class="carousel-patrocinadores" aria-label="Patrocinadores">
   <div class="carousel-track">
   <div class="patrocinador-item">
-    <img src="https://via.placeholder.com/150x100.png?text=Logo+1" alt="Patrocinador 1" />
+    <img src="src/img/Exemplodepatrocinador1.png" alt="Patrocinador 1" />
   </div>
   <div class="patrocinador-item">
-    <img src="https://via.placeholder.com/150x100.png?text=Logo+2" alt="Patrocinador 2" />
+    <img src="src/img/Exemplodepatrocinador2.png" alt="Patrocinador 2" />
   </div>
   <div class="patrocinador-item">
-    <img src="https://via.placeholder.com/150x100.png?text=Logo+3" alt="Patrocinador 3" />
+    <img src="src/img/Exemplodepatrocinador3.png" alt="Patrocinador 3" />
   </div>
   <div class="patrocinador-item">
-    <img src="https://via.placeholder.com/150x100.png?text=Logo+4" alt="Patrocinador 4" />
+    <img src="src/img/Exemplodepatrocinador4.png" alt="Patrocinador 4" />
   </div>
   <div class="patrocinador-item">
-    <img src="https://via.placeholder.com/150x100.png?text=Logo+5" alt="Patrocinador 5" />
+    <img src="src/img/Exemplodepatrocinador5.png" alt="Patrocinador 5" />
   </div>
   <div class="patrocinador-item">
-    <img src="https://via.placeholder.com/150x100.png?text=Logo+6" alt="Patrocinador 6" />
+    <img src="src/img/Exemplodepatrocinador6.png" alt="Patrocinador 6" />
   </div>
 </div>
 </section>
     <script src="src/js/app.js"></script>
 </body>
-<footer>
-  <div>
-    <h4>AGROPEC 2025</h4>
-    <p>Feira de Agricultura e Pecuária</p>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-bloco bloco-logo">
+      <img src="src/img/LOGO AGROPEC 2025.png" alt="Logo AGROPEC" class="footer-logo">
+      <div class="footer-texto">
+        <h4>AGROPEC</h4>
+        <span class="ano">2025</span>
+        <p class="descricao">Feira de Agricultura e Pecuária</p>
+      </div>
+    </div>
+
+    <div class="footer-bloco">
+      <strong>Links Úteis</strong>
+      <ul>
+         <a href="#app">Início</a>
+        <li><a href="#programacao">Programação</a></li>
+        <li><a href="#mapa">Mapa</a></li>
+        <li><a href="#expositores">Expositores</a></li>
+        <li><a href="#patrocinadores">Patrocinadores</a></li>
+    
+      </ul>
+    </div>
+
+    <div class="footer-bloco">
+      <strong>Contato</strong>
+      <p>📧 contato@agropec.com.br</p>
+      <p>📞 (91) 98765-4321</p>
+      <p>📍 Paragominas - São Paulo, SP</p>
+    </div>
+
+    <div class="footer-bloco">
+      <strong>Siga-nos</strong>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/1AquQGBEkn/">📘 Facebook</a>
+        <a href="https://www.instagram.com/agropec_pgm?igsh=MWtvbHgxaGUyYmkzNg==">📸 Instagram</a>
+      </div>
+    </div>
   </div>
-  <div>
-    <h4>Contato</h4>
-    <p>contato@agropec.com.br</p>
-    <p>(11) 98765-4321</p>
-    <p>Rua Exemplo, 123 Paragominas, PA</p>
+  <div class="footer-copy">
+    © 2025 AGROPEC. Todos os direitos reservados.
   </div>
 </footer>
 </html>
